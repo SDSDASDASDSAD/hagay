@@ -3,18 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>測驗1</title>
+    <title>表單</title>
 </head>
 <body>
-    <h1>我的練習 php & mysq1</h1>
+    <h1>調查表單</h1>
+    <from action="">
+    
+    <fieldset>
+    <legend>基本資料</legend>
+    <p>
 
-    <p>今天是: <?=date("Y年m月d日") ?></p>
-    <hr>
-    <p>我的名字: <?= $_GET["name"] ?></p>
-    <p>我的年紀: <?= $_GET["age"] ?></p>
+    <label for="name">姓名</label>
+    <input type="text" name="name" id="name" value="" placeholder="請用中文">
+    </p>
+    <p>
+        <label for="">性別</label>
+        <input type="radio" name="gender" id="gender1" value="1"> 
+        <label for="gender1">男生</label>
+        <input type="radio" name="gender" id="gender2" value="2"> 
+        <label for="gender2">女生</label>
 
-    <p>我的身高: <?= $h=$_GET["height"] ?></p>
-    <p>我的體重: <?= $w=$_GET["weight"] ?></p>
-    <p>我的bmi值: <?= $w/($h/100*$h/100) ?></p>
-    </body>
+
+
+    </p>
+    <p>
+       <label for="bday">生日</label> 
+       <input type="date" name="bday" id="bday">
+    </p>
+<p>
+       <label for="place">電話</label> 
+       <input type="text" name="phone" id="phone">
+</p>
+<p>
+<label for="place">居住區域</label>
+
+<select name="place" id="place">
+       <option value="1">北部</option>
+       <option value="2">中部</option>
+       <option value="3">南部</option>
+       <option value="4">東部</option>
+       <option value="5">外島</option>
+</select>
+
+
+</p>
+    </fieldset>
+
+<fieldset>
+<legend> 使用行為</legend>
+<input type="checkbox" name="behavior[]" id="behavior1">
+<label for="behavior1">聊天</label>
+<input type="checkbox" name="behavior[]" id="behavior2">
+<label for="behavior2">直播</label>
+<input type="checkbox" name="behavior[]" id="behavior3">
+<label for="behavior3">書信</label>
+<input type="checkbox" name="behavior[]" id="behavior4">
+
+
+
+
+
+
+    </fieldset>
+
+    <fieldset>
+    <legend>滿意度</legend>
+    </fieldset>
+
+
+    <fieldset>
+    <legend>資料上傳</legend>
+    </fieldset>
+    </p>
+</from>
+</body>
 </html>
