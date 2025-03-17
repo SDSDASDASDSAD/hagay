@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>調查表單</h1>
-    <from action="">
+    <from action="" method="post">
     
     <fieldset>
     <legend>基本資料</legend>
@@ -58,6 +58,7 @@
 <input type="checkbox" name="behavior[]" id="behavior3">
 <label for="behavior3">書信</label>
 <input type="checkbox" name="behavior[]" id="behavior4">
+<label for="behavior4">其他</label>
 
 
 
@@ -75,6 +76,44 @@
     <legend>資料上傳</legend>
     </fieldset>
     </p>
-</from>
+    <input type="submit" name="submit" value="送出">
+    </from>
+    <hr>
+    
+    <?php
+    if (isset($__POST["submit"])) {
+      $name   =$_REQUEST["name"];
+      $gender =$_REQUEST["gender"];
+      $bday   =$_REQUEST["bday"];
+      $phone  =$_REQUEST["phone"];
+      $area   =$_REQUEST["area"];
+      echo "<p>收到資料</p>";
+      echo "<p>你的名字是: .name .</p.>";
+      
+ if ($gender=="1"){
+    echo "<p>你是男生</p>";
+}   elseif ($gender=="2") {
+    echo "<p>妳是女生</p>";
+}  else {
+    echo "<p>你是男生還是女生?</P>";
+ }
+ echo "<p>你的生日:" . $bday . "</p>";
+
+    }
+       
+    ?>
+    <script type='text/javascript'>
+        function preview_image(event) {
+            var reader = new FileReader();
+            reader.onload =function () {
+                var output = document.getElementById('output_image');
+                output.src = reader.result;
+            }
+            reader.readAsDataURL(event.target.files[0]);
+    }
+
+
+
+</script>
 </body>
 </html>
